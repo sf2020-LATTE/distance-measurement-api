@@ -1,0 +1,15 @@
+## 環境構築手順
+
+コンテナをビルド
+
+```
+docker build -t distance_measurement_image . --no-cache=true
+```
+
+コンテナを起動
+
+```
+docker run -d --name distance_measurement_container \
+--mount type=bind,source="$(pwd)"/src,target=/app \
+-p 80:80 distance_measurement_image
+```
