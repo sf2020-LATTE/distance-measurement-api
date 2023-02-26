@@ -1,5 +1,11 @@
 ## 環境構築手順
 
+Githubからリポジトリを持ってくる
+
+```
+git clone git@github.com:sf2020-LATTE/distance-measurement-api.git
+```
+
 コンテナをビルド
 
 ```
@@ -12,4 +18,10 @@ docker build -t distance_measurement_image . --no-cache=true
 docker run -d --name distance_measurement_container \
 --mount type=bind,source="$(pwd)"/src,target=/app \
 -p 80:80 distance_measurement_image
+```
+
+テストの実谷、Dockerコンテナ内で以下を実行
+
+```
+pytest tests/test_main.py
 ```
