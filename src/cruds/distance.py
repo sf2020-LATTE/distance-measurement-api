@@ -13,4 +13,4 @@ def calculate_distance(start_longitude, start_latitude, end_longitude, end_latit
     # ハーベイの公式
     distance = config.EARTH_RADIUS * math.acos(math.sin(lat1) * math.sin(lat2) + math.cos(lat1) * math.cos(lat2) * math.cos(lon1 - lon2))
 
-    return distance
+    return round(distance, 6)

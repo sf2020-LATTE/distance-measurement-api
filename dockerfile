@@ -4,6 +4,8 @@ FROM python:3.7
 COPY ./src /app
 
 RUN pip install fastapi uvicorn
+RUN pip install pytest
+RUN pip install httpx
 
 EXPOSE 80
 
