@@ -10,12 +10,7 @@ import app.schemas.schema as schema_model
 router = APIRouter()
 
 
-@router.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@router.get("/distance/", response_model=schema_model.Calculate_result)
+@router.get("/distance", response_model=schema_model.Calculate_result)
 async def get_distance(
     start_longitude : Decimal = Query(ge=-180, le=180),
     start_latitude: Decimal = Query(ge=-90, le=90),
